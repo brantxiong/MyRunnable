@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 import requests
-
-response = requests.post(upload_file_url,
-                         files={'filename': open(uploadfile,'rb'),
-                                'description': 'upload test'})
-print response.content
+url = 'http://httpbin.org/post'
+files = {'file': open('a.txt', 'rb')}
+values = {'author': 'John Smith'}
+r = requests.post(url, files=files, data=values)
+print r.content
